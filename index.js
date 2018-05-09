@@ -5,8 +5,8 @@ var letterBank = ["orange", "apple", "banana", "blue", "car", "book","reputation
 var guessWord = letterBank[Math.floor(Math.random()*10)];
 var remainLetter = guessWord.length;
 
-var Guess = function() {
-    Word(guessWord);
+var guess = function () {
+    
     if (remainLetter>0) {
       inquirer
           .prompt([
@@ -18,7 +18,15 @@ var Guess = function() {
                   }
                  ])
           .then(function(Response) {
-             Word().guessL(response.guessLetter);
+             var guessedLetter = Response.guessLetter;
+             for (var i=0; i<guessWord.length;i++) {
+                 Word(guessWord).guessL(word.wordObj[i],guessedLetter);
+                 if (Letter.guessed = true) {
+                     remainLetter --;
+                 }
+             }
       });
     }
 }
+
+guess();

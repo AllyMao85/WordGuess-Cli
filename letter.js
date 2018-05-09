@@ -4,13 +4,14 @@ var displayWord = "h__o";
 var wordObj = displayWord.split("");
 
 
-var Letter = function(underlyChar) {
+var Letter = function (underlyChar) {
   this.underlyChar = underlyChar;
   this.guessed = false;
   this.checkLetter = function (underlyChar) {
 // Create a "Prompt" with a series of questions.
              console.log(underlyChar);
              var i = displayWord.indexOf(this.underlyChar);
+             console.log(i);
     // If the inquirerResponse confirms, we displays the inquirerResponse's username and pokemon from the answers.
              if (i>0) {
                  this.underlyChar = displayWord.substring(i,i+1);
@@ -30,7 +31,14 @@ var Letter = function(underlyChar) {
          }
       
     }
+    console.log(this.underlyChar);
+    console.log(this.guessed);
 };
-Letter("o");
+
+var newL = new Letter("o");
+
+newL.checkLetter();
+newL.correctLetter("i");
+console.log("testfile");
 //rightword[i]=comGuessLower.substring(i,i+1);
 module.exports = Letter;
