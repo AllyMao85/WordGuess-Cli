@@ -1,10 +1,10 @@
 
-var wordFile = require("./word.js");
+var Word = require("./word");
 var letterBank = ["orange", "apple", "banana", "blue", "car", "book","reputation","nut","dress","vitamins"];
-
+var inquirer = require("inquirer");
 var guessWord = letterBank[Math.floor(Math.random()*10)];
 var remainLetter = guessWord.length;
-
+console.log(guessWord);
 var guess = function () {
     
     if (remainLetter>0) {
@@ -20,9 +20,11 @@ var guess = function () {
           .then(function(Response) {
              var guessedLetter = Response.guessLetter;
              for (var i=0; i<guessWord.length;i++) {
-                 Word(guessWord).guessL(word.wordObj[i],guessedLetter);
-                 if (Letter.guessed = true) {
+                 var word1 = new Word(guessWord);
+                 word1.guessL(word1.wordObj[i],guessedLetter);
+                 if (Letter().guessed = true) {
                      remainLetter --;
+                     console.log(remainLetter);
                  }
              }
       });

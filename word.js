@@ -1,23 +1,37 @@
-var wordFile = require("./letter.js");
+var Letter = require("./letter");
 
 var Word = function(guessWord) {
     this.guessWord = guessWord;
     this.wordObj = guessWord.split("");
     this.wordString = function() {
+        var displayWord = "";
         for (var i=0; i<this.wordObj.length;i++) {
-            console.log(i);
-            Letter(wordObj[i]).checkLetter(wordObj[i])
-            displayWord += displayWord.concat(Letter().underlyChar);
-
+            console.log("Current position is: "+i);
+            console.log("Current letter is: "+this.wordObj[i]);
+            var newL = new Letter(this.wordObj[i]);
+            newL.checkLetter(displayWord);
+            //Letter(this.wordObj[i]).checkLetter(this.wordObj[i]);
+            
+            
+            displayWord += displayWord.concat(newL.underlyChar);
+            //console.log(displayWord);
         }
+
     this.guessL = function(underlyChar,guessedLetter) {
-        Letter(underlyChar).correctLetter(guessedLetter);
+        var newLET = new Letter(underlyChar);
+        newLET.correctLetter(guessedLetter);
+        //newLET.correctLetter(guessedLetter);
+        //console.log(Letter(underlyChar).guessed);
     }   
     }
 };
 
-var word1 = new Word("apple");
-console.log(displayWord);
-console.log(wordObj);
+// var word1 = new Word("apple");
+// word1.wordString();
+// word1.guessL();
+;//console.log(word1.wordObj);
+
+
+
 
 module.exports = Word;
