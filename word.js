@@ -6,24 +6,27 @@ var Word = function(guessWord) {
     this.wordString = function() {
         var displayWord = "";
         for (var i=0; i<this.wordObj.length;i++) {
-            console.log("Current position is: "+i);
-            console.log("Current letter is: "+this.wordObj[i]);
+            //console.log("Current position is: "+i);
+            //console.log("Current letter is: "+this.wordObj[i]);
             var newL = new Letter(this.wordObj[i]);
             newL.checkLetter(displayWord);
             //Letter(this.wordObj[i]).checkLetter(this.wordObj[i]);
             
             
             displayWord += displayWord.concat(newL.underlyChar);
-            //console.log(displayWord);
+            
         }
-
+        console.log(displayWord);
+    }
+    this.rightLetter = false;
     this.guessL = function(underlyChar,guessedLetter) {
         var newLET = new Letter(underlyChar);
         newLET.correctLetter(guessedLetter);
+        this.rightLetter = newLET.guessed;
         //newLET.correctLetter(guessedLetter);
         //console.log(Letter(underlyChar).guessed);
     }   
-    }
+  
 };
 
 // var word1 = new Word("apple");

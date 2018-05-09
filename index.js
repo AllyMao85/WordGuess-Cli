@@ -21,12 +21,17 @@ var guess = function () {
              var guessedLetter = Response.guessLetter;
              for (var i=0; i<guessWord.length;i++) {
                  var word1 = new Word(guessWord);
+                //  console.log(word1);
+                //  console.log(word1.wordObj[i]);
                  word1.guessL(word1.wordObj[i],guessedLetter);
-                 if (Letter().guessed = true) {
+                 word1.wordString();
+                 console.log(word1.rightLetter);
+                 if (word1.rightLetter === true) {
                      remainLetter --;
-                     console.log(remainLetter);
+                     
                  }
-             }
+                 console.log(remainLetter);
+            }
       });
     }
 }

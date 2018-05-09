@@ -11,11 +11,11 @@ var Letter = function (underlyChar) {
 // Create a "Prompt" with a series of questions.
              
              var i = displayWord.indexOf(this.underlyChar);
-             //console.log(i);
+             console.log(i);
     // If the inquirerResponse confirms, we displays the inquirerResponse's username and pokemon from the answers.
              if (i>0) {
                  this.underlyChar = displayWord.substring(i,i+1);
-                //console.log(this.underlyChar);
+                console.log(this.underlyChar);
               }  else {
                 this.underlyChar = "_";
               }
@@ -28,7 +28,7 @@ var Letter = function (underlyChar) {
           //console.log(this.guessed);
           console.log("CORRECT!!!");
          } else {
-          console.log("INCORRECT!!!");
+          //console.log("INCORRECT!!!");
          }
       
     }
